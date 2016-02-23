@@ -5,8 +5,8 @@ export const Header = React.createClass({
 
   render() {
     return (
-      <div>
-        Header
+      <div className='header'>
+        Meetup Visualization
       </div>
     );
   }

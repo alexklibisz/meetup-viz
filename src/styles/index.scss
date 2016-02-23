@@ -1,1 +1,33 @@
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
 
+.header {
+  background-color: tomato;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.viz-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.map-viz {
+  flex-grow: 1;
+  padding: 3px;
+}
+
+.chart-viz {
+  flex-grow: 1;
+  padding: 3px;
+}
+
+.data-aggregate {
+  flex-grow: 1;
+  padding: 3px;
+}

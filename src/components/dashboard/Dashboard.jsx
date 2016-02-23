@@ -9,16 +9,16 @@ export const Dashboard = React.createClass({
 
   render() {
     return (
-      <div>
+      <main>
         <Header/>
-        <div>
+        <div className='viz-container'>
           <MapViz/>
           <ChartViz/>
         </div>
         <div>
           <DataAggregate/>
         </div>
-      </div>
+      </main>
     );
   }
 

@@ -6,7 +6,7 @@ export const DataAggregate = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className='data-aggregate'>
         Data Aggregate
       </div>
     );

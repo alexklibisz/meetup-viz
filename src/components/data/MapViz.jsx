@@ -6,7 +6,7 @@ export const MapViz = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className='map-viz'>
         Map Viz
       </div>
     );
