@@ -2,23 +2,26 @@
 
 const model = {};
 
-model.init = function init({ svgSelector, data }) {
+model.render = function init({ svgSelector, data }) {
 
   svgSelector = svgSelector.charAt(0) === '#' ? svgSelector : `#${svgSelector}`;
 
-  const chart = nv.models.discreteBarChart()
-    .x(function(d) { return d.label })
-    .y(function(d) { return d.value })
-    .height(400)
-    .width(400);
+  const
+    svgElement = d3.select(svgSelector),
+    height = svgElement.node().parentNode.offsetHeight,
+    width = svgElement.node().parentNode.offsetWidth;
 
-  d3.select(svgSelector)
+  const chart = nv.models.discreteBarChart()
+    .x(function(d) { return d.key })
+    .y(function(d) { return d.value })
+    .height(height)
+    .width(width);
+
+  chart.tooltip.enabled = false;
+
+  svgElement
     .datum(data)
     .call(chart);
-
-};
-
-model.update = function update({ svgSelector, data }) {
 
 };
 

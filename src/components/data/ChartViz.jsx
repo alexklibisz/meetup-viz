@@ -9,14 +9,9 @@ export const ChartViz = React.createClass({
 
   getDefaultProps() {
     return {
-      vizID: 'chart-viz-svg'
-    }
-  },
-
-  componentDidMount() {
-    const sampleData = [{
-      key: 'Stuff',
-      values: [
+      vizID: 'chart-viz-svg',
+      dataKey: 'Stuff',
+      dataValues: [
         {
           label: 'Stuff 1',
           value: 30
@@ -26,13 +21,32 @@ export const ChartViz = React.createClass({
           value: 40
         }
       ]
+    }
+  },
+
+  componentDidMount() {
+
+  },
+
+  componentDidUpdate() {
+    const data = [{
+      key: this.props.dataKey,
+      values: this._convertDataValues(this.props.dataValues)
     }];
 
-    ChartVizModel.init({
+    ChartVizModel.render({
       svgSelector: this.props.vizID,
-      data: sampleData
+      data
     });
+  },
 
+  _convertDataValues(dataValues) {
+    return Object.keys(dataValues).map(key => {
+      return {
+        key,
+        value: dataValues[key]
+      };
+    });
   },
 
   render() {

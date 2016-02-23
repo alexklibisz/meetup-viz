@@ -26,13 +26,21 @@ main {
 
 .map-viz {
   flex-grow: 1;
-  padding: 3px;
+  // padding: 3px;
 }
 
 .chart-viz {
-  flex-grow: 1;
-  padding: 3px;
+  // display: flex;
+  // flex-grow: 1;
+  // flex-direction: column;
+  // padding: 3px;
   border: 1px solid red;
+
+  > svg {
+    // flex-grow: 1;
+    border: 1px solid blue;
+  }
+
 }
 
 .data-aggregate {
