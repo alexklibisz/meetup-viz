@@ -19,7 +19,7 @@ export const MapViz = React.createClass({
 
     return (
       <div className='map-viz'>
-        {this.props.rsvpCount}
+        <p>The map will go here</p>
       </div>
     );
   }
