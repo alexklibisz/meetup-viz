@@ -17,6 +17,13 @@ main {
   flex-grow: 1;
 }
 
+.viz-container ._charts,
+.viz-container ._map {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .map-viz {
   flex-grow: 1;
   padding: 3px;
@@ -30,7 +37,12 @@ main {
 
 .data-aggregate {
   flex-grow: 1;
-  padding: 3px;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 #chart-viz-svg {

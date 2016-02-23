@@ -8,29 +8,22 @@ export const MapViz = React.createClass({
 
   displayName: 'MapViz',
 
+  getDefaultProps() {
+    return {
+      rsvps: {},
+      rsvpCount: 0
+    }
+  },
+
   render() {
 
     return (
       <div className='map-viz'>
-        Map Viz
+        {this.props.rsvpCount}
       </div>
     );
   }
 
 });
 
-export const SyncComponent = React.createClass({
-
-  displayName: 'SyncComponent',
-
-  render() {
-    return(
-      <AltContainer stores={{MeetupStore}}>
-        <MapViz />
-      </AltContainer>
-    );
-  }
-
-})
-
-export default SyncComponent;
+export default MapViz;
