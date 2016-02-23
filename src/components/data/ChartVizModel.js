@@ -8,7 +8,7 @@ model.render = function init({ svgSelector, data }) {
 
   const
     svgElement = d3.select(svgSelector),
-    height = svgElement.node().parentNode.offsetHeight,
+    height = svgElement.node().parentNode.offsetHeight - 25,
     width = svgElement.node().parentNode.offsetWidth;
 
   const chart = nv.models.discreteBarChart()

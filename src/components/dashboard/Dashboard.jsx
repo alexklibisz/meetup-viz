@@ -23,11 +23,11 @@ export const Dashboard = React.createClass({
           </div>
           <div className='_charts'>
             <ChartViz vizID='barchart-countries'
-              dataKey='Countries'
+              chartName='Countries'
               dataValues={this.props.MeetupStore.rsvpCountries}
               columnCount={10}/>
-            <ChartViz vizID='barchart-states' dataKey='States' dataValues={this.props.MeetupStore.rsvpStates} />
-            <ChartViz vizID='barchart-names' dataKey='Names' dataValues={this.props.MeetupStore.rsvpNames}/>
+            <ChartViz vizID='barchart-states' chartName='States' dataValues={this.props.MeetupStore.rsvpStates} />
+            <ChartViz vizID='barchart-names' chartName='Names' dataValues={this.props.MeetupStore.rsvpNames}/>
           </div>
         </div>
         <div>

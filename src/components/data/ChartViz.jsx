@@ -10,7 +10,7 @@ export const ChartViz = React.createClass({
   getDefaultProps() {
     return {
       vizID: 'chart-viz-svg',
-      dataKey: 'Stuff',
+      chartName: 'Chart',
       dataValues: [
         {
           label: 'Stuff 1',
@@ -62,6 +62,7 @@ export const ChartViz = React.createClass({
     return (
       <div className='chart-viz' ref='container'>
         <svg id={this.props.vizID}></svg>
+        <h6>{this.props.chartName}</h6>
       </div>
     );
   }
