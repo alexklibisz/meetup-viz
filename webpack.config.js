@@ -56,7 +56,8 @@ config.module = {
       test: /\.css$/,
       include: [
         path.join(__dirname, 'src'),
-        path.join(__dirname, 'node_modules/skeleton-css')
+        path.join(__dirname, 'node_modules/skeleton-css'),
+        path.join(__dirname, 'node_modules/nvd3')
       ],
       // loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       loaders: ['style', 'css?sourceMap'],

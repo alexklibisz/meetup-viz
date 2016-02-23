@@ -2,7 +2,7 @@
 
 const service = {};
 
-service.getSocket = function getSocket(socketURL = 'ws://stream.meetup.com/2/rsvps') {
+service.getRSVPSocket = function getSocket(socketURL = 'ws://stream.meetup.com/2/rsvps') {
   if(!window.hasOwnProperty('WebSocket')) {
     const error = new Error('web sockets are not supported by your browser');
     console.error(error);

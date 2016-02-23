@@ -12,7 +12,7 @@ export const Dashboard = React.createClass({
   displayName: 'Dashboard',
 
   componentWillMount() {
-    const socket = MeetupService.getSocket();
+    const socket = MeetupService.getRSVPSocket();
     socket.onmessage = MeetupActions.addRSVP;
   },
 

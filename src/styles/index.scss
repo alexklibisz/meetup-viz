@@ -25,9 +25,13 @@ main {
 .chart-viz {
   flex-grow: 1;
   padding: 3px;
+  border: 1px solid red;
 }
 
 .data-aggregate {
   flex-grow: 1;
   padding: 3px;
+}
+
+#chart-viz-svg {
 }
