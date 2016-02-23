@@ -1,4 +1,5 @@
 #!/bin/sh
 npm run build
+npm version patch
 git subtree push --prefix dist origin gh-pages
 npm run clean
