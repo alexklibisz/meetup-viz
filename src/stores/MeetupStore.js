@@ -23,7 +23,7 @@ class MeetupStore {
       data = JSON.parse(rsvp.data),
       country = data.group.group_country,
       state = data.group.group_state,
-      name = data.member.member_name;
+      name = data.member.member_name.split(' ').shift().toLowerCase();
 
     rsvps[data.rsvp_id] = data;
     rsvpStates[state] = rsvpStates.hasOwnProperty(state) ? rsvpStates[state] + 1 : 1;

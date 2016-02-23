@@ -22,13 +22,12 @@ export const Dashboard = React.createClass({
             <MapViz rsvps={this.props.MeetupStore.rsvps} rsvpCount={this.props.MeetupStore.rsvpCount}/>
           </div>
           <div className='_charts'>
-            <ChartViz vizID='barchart-countries' dataKey='Countries' dataValues={this.props.MeetupStore.rsvpCountries}/>
-            {
-              /*
-              <ChartViz vizID='barchart-states' />
-              <ChartViz vizID='barchart-names' />
-               */
-            }
+            <ChartViz vizID='barchart-countries'
+              dataKey='Countries'
+              dataValues={this.props.MeetupStore.rsvpCountries}
+              columnCount={15}/>
+            <ChartViz vizID='barchart-states' dataKey='States' dataValues={this.props.MeetupStore.rsvpStates} />
+            <ChartViz vizID='barchart-names' dataKey='Names' dataValues={this.props.MeetupStore.rsvpNames}/>
           </div>
         </div>
         <div>

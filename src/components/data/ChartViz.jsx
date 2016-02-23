@@ -20,7 +20,8 @@ export const ChartViz = React.createClass({
           label: 'Stuff 2',
           value: 40
         }
-      ]
+      ],
+      columnCount: 10
     }
   },
 
@@ -41,12 +42,19 @@ export const ChartViz = React.createClass({
   },
 
   _convertDataValues(dataValues) {
-    return Object.keys(dataValues).map(key => {
-      return {
-        key,
-        value: dataValues[key]
-      };
-    });
+    const
+      all = Object.keys(dataValues)
+      .filter(key => key !== undefined)
+      .map(key => {
+        return {
+          key,
+          value: dataValues[key]
+        };
+      }),
+      sortedByValue = all.sort((a, b) => a.value - b.value ),
+      topTen = sortedByValue.splice(0,this.props.columnCount),
+      sortedByName = topTen.sort((a, b) => a.key.localeCompare(b.key));
+    return sortedByName;
   },
 
   render() {
