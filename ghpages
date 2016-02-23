@@ -1,5 +1,10 @@
 #!/bin/sh
+git checkout gh-pages
+git merge master
 npm run build
-npm version patch
-git subtree push --prefix dist origin gh-pages
-npm run clean
+rm -r src/
+mv dist/* .
+rm -r dist/
+git commit -m "deploying to gh-pages"
+git push origin gh-pages -f
+git checkout master
