@@ -56,5 +56,11 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": [
+      "build"
+    ]
   }
 }
