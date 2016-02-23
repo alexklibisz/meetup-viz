@@ -1,8 +1,4 @@
 #!/bin/sh
-#if [ -z "$1" ]
-#then
-#  echo "Which folder do you want to deploy to GitHub Pages?"
-#  exit 1
-#fi
 npm run build
 git subtree push --prefix dist origin gh-pages
+npm run clean
