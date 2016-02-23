@@ -25,7 +25,7 @@ export const Dashboard = React.createClass({
             <ChartViz vizID='barchart-countries'
               dataKey='Countries'
               dataValues={this.props.MeetupStore.rsvpCountries}
-              columnCount={15}/>
+              columnCount={10}/>
             <ChartViz vizID='barchart-states' dataKey='States' dataValues={this.props.MeetupStore.rsvpStates} />
             <ChartViz vizID='barchart-names' dataKey='Names' dataValues={this.props.MeetupStore.rsvpNames}/>
           </div>

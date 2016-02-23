@@ -51,9 +51,10 @@ export const ChartViz = React.createClass({
           value: dataValues[key]
         };
       }),
-      sortedByValue = all.sort((a, b) => a.value - b.value ),
-      topTen = sortedByValue.splice(0,this.props.columnCount),
-      sortedByName = topTen.sort((a, b) => a.key.localeCompare(b.key));
+      sortedByValue = all.sort((a, b) => b.value - a.value ),
+      topColumns = sortedByValue.splice(0,this.props.columnCount),
+      sortedByName = topColumns.sort((a, b) => a.key.localeCompare(b.key));
+
     return sortedByName;
   },
 
