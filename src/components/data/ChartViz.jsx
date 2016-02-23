@@ -44,7 +44,6 @@ export const ChartViz = React.createClass({
   _convertDataValues(dataValues) {
     const
       all = Object.keys(dataValues)
-      .filter(key => key !== undefined)
       .map(key => {
         return {
           key,
