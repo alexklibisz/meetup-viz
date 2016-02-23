@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack-prod.config.js -p",
     "clean": "rm -rf dist/*.*",
+    "deploy": "./node_modules/gh-pages-deploy/bin/gh-pages-deploy",
     "dev": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
