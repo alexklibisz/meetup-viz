@@ -1,0 +1,53 @@
+{
+  "venue": {
+    "venue_name": "Community Recreation Center",
+    "lon": -73.985565,
+    "lat": 40.675591,
+    "venue_id": 24136814
+  },
+  "visibility": "public",
+  "response": "yes",
+  "guests": 0,
+  "member": {
+    "member_id": 19228771,
+    "photo": "http:\/\/photos2.meetupstatic.com\/photos\/member\/3\/a\/7\/b\/thumb_17774971.jpeg",
+    "member_name": "Davis"
+  },
+  "rsvp_id": 1596136817,
+  "mtime": 1456249661342,
+  "event": {
+    "event_name": "indoor soccer",
+    "event_id": "228625166",
+    "time": 1456529400000,
+    "event_url": "http:\/\/www.meetup.com\/Friendly-Pickup-Soccer-in-Brooklyn\/events\/228625166\/"
+  },
+  "group": {
+    "group_topics": [{
+      "urlkey": "pickupsoccer",
+      "topic_name": "Pick-Up Soccer"
+    }, {
+      "urlkey": "experienced-soccer-players",
+      "topic_name": "Experienced Soccer Players"
+    }, {
+      "urlkey": "futbol",
+      "topic_name": "Futbol"
+    }, {
+      "urlkey": "pickup-soccer",
+      "topic_name": "Pickup Soccer"
+    }, {
+      "urlkey": "co-ed-soccer",
+      "topic_name": "Co-ed Soccer"
+    }, {
+      "urlkey": "coed-soccer",
+      "topic_name": "Coed Soccer"
+    }],
+    "group_city": "Brooklyn",
+    "group_country": "us",
+    "group_id": 8417222,
+    "group_name": "Friendly Brooklyn Pickup Soccer",
+    "group_lon": -73.99,
+    "group_urlname": "Friendly-Pickup-Soccer-in-Brooklyn",
+    "group_state": "NY",
+    "group_lat": 40.67
+  }
+}
