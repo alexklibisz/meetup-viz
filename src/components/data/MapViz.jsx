@@ -11,36 +11,35 @@ export const MapViz = React.createClass({
 
   getDefaultProps() {
     return {
-      rsvps: {},
+      lastRSVP: {},
       rsvpCount: 0
     }
   },
 
   componentDidMount() {
-    // var map = L.map('map-viz').setView([-10, 50], 3);
-    // L.tileLayer('http://{s}.tiles.mapbox.com/v3/utkpiracyscience.n97d5l62/{z}/{x}/{y}.png', {
-    //   maxZoom: 14
-    // }).addTo(map);
-    // map.scrollWheelZoom.disable();
-
     const
       map = new L.Map('map-viz'),
       osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
       osm = new L.TileLayer(osmUrl, {minZoom: 3, maxZoom: 14, attribution: osmAttrib});
 
-  	map.setView(new L.LatLng(30, -100), 4);
+  	map.setView(new L.LatLng(30, -40), 3);
     map.scrollWheelZoom.disable();
   	map.addLayer(osm);
 
-    setTimeout(() => L.Util.requestAnimFrame(this._map.invalidateSize,this._map,!1,this._map._container), 200);
-
+    // Set the map size equivalent its container
+    setTimeout(() => L.Util.requestAnimFrame(map.invalidateSize, map, false, map._container), 100);
     this._map = map;
-
   },
 
-  componentDidUpdate() {
-    ;
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.lastRSVP.hasOwnProperty('venue')) {
+      const
+        latlng = [nextProps.lastRSVP.venue.lat, nextProps.lastRSVP.venue.lon],
+        marker = new L.Marker(latlng, {draggable:true});
+      this._map.addLayer(marker);
+      setTimeout(() => this._map.removeLayer(marker), 90 * 1000);
+    }
   },
 
   render() {

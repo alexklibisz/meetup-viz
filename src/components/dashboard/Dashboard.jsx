@@ -19,7 +19,7 @@ export const Dashboard = React.createClass({
         <Header/>
         <div className='viz-container'>
           <div className='_map'>
-            <MapViz rsvps={this.props.MeetupStore.rsvps} rsvpCount={this.props.MeetupStore.rsvpCount}/>
+            <MapViz lastRSVP={this.props.MeetupStore.lastRSVP} rsvpCount={this.props.MeetupStore.rsvpCount}/>
           </div>
           <div className='_charts'>
             <ChartViz vizID='barchart-countries'

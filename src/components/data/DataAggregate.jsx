@@ -11,12 +11,18 @@ export const DataAggregate = React.createClass({
 
   render() {
 
-    const memoryUsed = window.performance.memory.usedJSHeapSize / 1000000;
+    const
+      perf = window.performance,
+      memoryUsed = (perf.memory !== undefined) ? perf.memory.usedJSHeapSize / 1000000 : -1;
 
     return (
       <div className='data-aggregate'>
         <span>RSVPs received: {this.props.rsvpCount}</span>,
-        <span>&nbsp; memory used: {memoryUsed}</span>
+        {
+          (memoryUsed > 0) ? (
+            <span>&nbsp; memory used: {memoryUsed} mb</span>
+          ) : null
+        }
       </div>
     );
   }

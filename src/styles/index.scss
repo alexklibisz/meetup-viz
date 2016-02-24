@@ -7,14 +7,20 @@ main {
 
 .header {
   background-color: tomato;
+  color: white;
   font-weight: bold;
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   > * {
     padding: 0px;
     margin: 0px;
   }
+}
+
+a, a:visited, a:hover, a:active {
+  color: white;
 }
 
 .viz-container {
@@ -50,14 +56,9 @@ main {
   flex-grow: 1;
   flex-direction: column;
   text-align: center;
-  // padding: 3px;
-  // border: 1px solid red;
-
   > svg {
     flex-grow: 1;
-    // border: 1px solid blue;
   }
-
 }
 
 .data-aggregate {
@@ -66,9 +67,6 @@ main {
   color: white;
   text-align: center;
   padding: 10px;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 500;
-}
-
-#chart-viz-svg {
 }
