@@ -21,9 +21,9 @@ class MeetupStore {
     const
       {rsvpCount, rsvpStates, rsvpCountries, rsvpNames} = this.state,
       data = JSON.parse(rsvp.data),
-      country = data.group.group_country,
-      state = data.group.group_state,
-      name = data.member.member_name.split(' ').shift().toLowerCase() || 'N/A';
+      country = data.group.group_country.toUpperCase(),
+      state = data.group.group_state.toUpperCase(),
+      name = data.member.member_name.split(' ').shift().toUpperCase();
 
     if(state !== undefined) {
       rsvpStates[state] = rsvpStates.hasOwnProperty(state) ? rsvpStates[state] + 1 : 1;
