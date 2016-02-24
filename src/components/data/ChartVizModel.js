@@ -15,7 +15,8 @@ model.render = function init({ svgSelector, data }) {
     .x(function(d) { return d.key })
     .y(function(d) { return d.value })
     .height(height)
-    .width(width);
+    .width(width)
+    .showValues(true);
 
   chart.tooltip.enabled = false;
 

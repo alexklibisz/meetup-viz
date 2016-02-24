@@ -35,7 +35,8 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0-rc5",
-    "skeleton-css": "^2.0.4"
+    "skeleton-css": "^2.0.4",
+    "stats-js": "^1.0.0-alpha1"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",

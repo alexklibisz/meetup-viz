@@ -12,6 +12,5 @@ require('nvd3/build/nv.d3.css');
 window.d3 = require('d3');
 window.nv = require('nvd3');
 
-// Launch the app
-require('components/Routes.jsx');
 require('styles/index.scss');
+require('components/Routes.jsx');
