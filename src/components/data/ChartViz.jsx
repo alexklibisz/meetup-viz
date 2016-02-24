@@ -46,7 +46,7 @@ export const ChartViz = React.createClass({
       all = Object.keys(dataValues)
       .map(key => {
         return {
-          key,
+          key: key.toUpperCase(),
           value: dataValues[key]
         };
       }),
