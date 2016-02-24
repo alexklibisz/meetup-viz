@@ -36,7 +36,7 @@ export const MapViz = React.createClass({
     if(nextProps.lastRSVP.hasOwnProperty('venue')) {
       const
         latlng = [nextProps.lastRSVP.venue.lat, nextProps.lastRSVP.venue.lon],
-        marker = new L.Marker(latlng, {draggable:true});
+        marker = new L.Marker(latlng);
       this._map.addLayer(marker);
       setTimeout(() => this._map.removeLayer(marker), 90 * 1000);
     }
