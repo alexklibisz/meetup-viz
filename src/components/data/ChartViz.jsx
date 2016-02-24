@@ -52,7 +52,6 @@ export const ChartViz = React.createClass({
       }),
       sortedByValue = all.sort((a, b) => b.value - a.value ),
       topColumns = sortedByValue.splice(0,this.props.columnCount);
-      // sortedByName = topColumns.sort((a, b) => a.key.localeCompare(b.key));
 
     return topColumns;
   },
@@ -61,7 +60,7 @@ export const ChartViz = React.createClass({
     return (
       <div className='chart-viz' ref='container'>
         <svg id={this.props.vizID}></svg>
-        <h6>{this.props.chartName}</h6>
+        <div className='_title'>{this.props.chartName}</div>
       </div>
     );
   }

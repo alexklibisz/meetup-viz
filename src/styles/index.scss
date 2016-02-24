@@ -56,9 +56,20 @@ a, a:visited, a:hover, a:active {
   flex: 1 1 auto;
   flex-direction: column;
   text-align: center;
+  min-height: 33%;
+  border-bottom: 1px solid #333;
+  position: relative;
   > svg {
     flex: 1 1 auto;
   }
+
+}
+
+.chart-viz ._title {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
 }
 
 .data-aggregate {
