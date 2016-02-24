@@ -8,9 +8,11 @@ Promise.config({ warnings: false });
 require('skeleton-css/css/normalize.css');
 require('skeleton-css/css/skeleton.css');
 require('nvd3/build/nv.d3.css');
+require('leaflet/dist/leaflet.css');
 
 window.d3 = require('d3');
 window.nv = require('nvd3');
+window.L = require('leaflet');
 
 require('styles/index.scss');
 require('components/Routes.jsx');

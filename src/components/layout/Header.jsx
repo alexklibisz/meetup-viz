@@ -6,7 +6,8 @@ export const Header = React.createClass({
   render() {
     return (
       <div className='header'>
-        Meetup Visualization
+        <h2>Meetup Visualization</h2>
+        <span>Developed by Alex Klibisz; uses the Meetup.com open events API.</span>
       </div>
     );
   }

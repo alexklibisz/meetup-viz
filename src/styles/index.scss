@@ -7,9 +7,14 @@ main {
 
 .header {
   background-color: tomato;
-  font-size: 2.5rem;
   font-weight: bold;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  > * {
+    padding: 0px;
+    margin: 0px;
+  }
 }
 
 .viz-container {
@@ -19,14 +24,25 @@ main {
 
 .viz-container ._charts,
 .viz-container ._map {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
+.viz-container ._map {
+  flex-grow: 2;
+}
+
+.viz-container ._charts {
+  flex-grow: 1;
+}
+
 .map-viz {
   flex-grow: 1;
-  // padding: 3px;
+  display: flex;
+}
+
+#map-viz {
+  flex-grow: 1;
 }
 
 .chart-viz {
