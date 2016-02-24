@@ -25,7 +25,7 @@ a, a:visited, a:hover, a:active {
 
 .viz-container {
   display: flex;
-  flex-grow: 1;
+  flex: 1 1 auto;
 }
 
 .viz-container ._charts,
@@ -34,35 +34,35 @@ a, a:visited, a:hover, a:active {
   flex-direction: column;
 }
 
-.viz-container ._map {
-  flex-grow: 2;
+.viz-container ._charts {
+  flex: 1 0 auto;
 }
 
-.viz-container ._charts {
-  flex-grow: 1;
+.viz-container ._map {
+  flex: 2 1 auto;
 }
 
 .map-viz {
-  flex-grow: 1;
+  flex: 1 1 auto;
   display: flex;
 }
 
 #map-viz {
-  flex-grow: 1;
+  flex: 1 1 auto;
 }
 
 .chart-viz {
   display: flex;
-  flex-grow: 1;
+  flex: 1 1 auto;
   flex-direction: column;
   text-align: center;
   > svg {
-    flex-grow: 1;
+    flex: 1 1 auto;
   }
 }
 
 .data-aggregate {
-  flex-grow: 1;
+  flex: 1 1 auto;
   background: #333;
   color: white;
   text-align: center;
