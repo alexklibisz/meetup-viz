@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
 import Header from 'components/layout/Header';
-import ChartVizModel from 'components/data/ChartVizModel';
+import ChartVizModel from 'components/viz/ChartVizModel';
 
 export const ChartViz = React.createClass({
 
@@ -32,7 +32,7 @@ export const ChartViz = React.createClass({
   componentDidUpdate() {
     const data = [{
       key: this.props.dataKey,
-      values: this._convertDataValues(this.props.dataValues)
+      values: this._convertDataValues(this.props.dataValues, this.props.columnCount)
     }];
 
     ChartVizModel.render({
@@ -41,17 +41,22 @@ export const ChartViz = React.createClass({
     });
   },
 
-  _convertDataValues(dataValues) {
+  /**
+   * Convert the data passed in as a prop to the format
+   * required by the NVD3 chart.
+   * @param  {Object} dataValues Data passed in as a prop
+   * @return {Array}            Array of form {key: 'some name', value: integer value} for the top columnCount columns.
+   */
+  _convertDataValues(dataValues, columnCount) {
     const
-      all = Object.keys(dataValues)
-      .map(key => {
+      all = Object.keys(dataValues).map(key => {
         return {
           key: key.toUpperCase(),
           value: dataValues[key]
         };
       }),
-      sortedByValue = all.sort((a, b) => b.value - a.value ),
-      topColumns = sortedByValue.splice(0,this.props.columnCount);
+      sortedByValue = all.sort((a, b) => b.value - a.value),
+      topColumns = sortedByValue.splice(0, columnCount);
 
     return topColumns;
   },

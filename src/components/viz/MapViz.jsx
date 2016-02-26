@@ -3,7 +3,7 @@ import React from 'react';
 import Header from 'components/layout/Header';
 import AltContainer from 'alt-container';
 import MeetupStore from 'stores/MeetupStore';
-import MapVizModel from 'components/data/MapViz';
+import MapVizModel from 'components/viz/MapViz';
 
 export const MapViz = React.createClass({
 

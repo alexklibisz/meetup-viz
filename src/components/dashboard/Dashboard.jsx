@@ -1,9 +1,9 @@
 'use strict';
 import React from 'react';
 import Header from 'components/layout/Header';
-import ChartViz from 'components/data/ChartViz';
-import MapViz from 'components/data/MapViz';
-import DataAggregate from 'components/data/DataAggregate';
+import ChartViz from 'components/viz/ChartViz';
+import MapViz from 'components/viz/MapViz';
+import DataAggregate from 'components/viz/DataAggregate';
 import MeetupService from 'services/MeetupService';
 import MeetupActions from 'actions/MeetupActions';
 import MeetupStore from 'stores/MeetupStore';
