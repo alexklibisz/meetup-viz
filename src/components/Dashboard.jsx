@@ -1,12 +1,12 @@
 'use strict';
 import React from 'react';
-import Header from 'components/layout/Header';
+import Header from 'components/Header';
 import ChartViz from 'components/viz/ChartViz';
 import MapViz from 'components/viz/MapViz';
-import DataAggregate from 'components/viz/DataAggregate';
+import DataAggregate from 'components/Footer';
 import MeetupService from 'services/MeetupService';
-import MeetupActions from 'actions/MeetupActions';
-import MeetupStore from 'stores/MeetupStore';
+import MeetupActions from 'flux/MeetupActions';
+import MeetupStore from 'flux/MeetupStore';
 import AltContainer from 'alt-container';
 
 export const Dashboard = React.createClass({

@@ -1,6 +1,5 @@
 'use strict';
 import React from 'react';
-import Header from 'components/layout/Header';
 import ChartVizModel from 'components/viz/ChartVizModel';
 
 export const ChartViz = React.createClass({

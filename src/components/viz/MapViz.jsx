@@ -1,8 +1,6 @@
 'use strict';
 import React from 'react';
-import Header from 'components/layout/Header';
 import AltContainer from 'alt-container';
-import MeetupStore from 'stores/MeetupStore';
 import MapVizModel from 'components/viz/MapVizModel';
 
 export const MapViz = React.createClass({

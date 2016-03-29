@@ -1,6 +1,6 @@
 'use strict';
-import alt from 'services/Alt';
-import MeetupActions from 'actions/MeetupActions';
+import alt from 'flux/Alt';
+import MeetupActions from 'flux/MeetupActions';
 
 // TODO: do the non-class syntax for stores/actions to make it clear
 // how this is actually working.

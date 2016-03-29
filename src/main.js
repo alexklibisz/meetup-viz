@@ -6,4 +6,4 @@ Promise.onPossiblyUnhandledRejection(function(error) { throw error; });
 Promise.config({ warnings: false });
 
 require('./styles/index.scss');
-require('./components/Routes.jsx');
+require('./components/Root.jsx');

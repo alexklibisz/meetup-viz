@@ -1,5 +1,5 @@
 'use strict';
-import alt from 'services/Alt';
+import alt from 'flux/Alt';
 
 class MeetupActions {
   constructor() {
