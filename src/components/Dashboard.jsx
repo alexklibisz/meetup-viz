@@ -49,7 +49,10 @@ export const SyncComponent = React.createClass({
 
   componentWillMount() {
     const socket = MeetupService.getRSVPSocket();
-    socket.onmessage = MeetupActions.addRSVP;
+    socket.onmessage = (data) => {
+      ga('send', 'event', 'RSVPs', window.debugId, data);
+      MeetupActions.addRSVP(data);
+    };
   },
 
   render() {
