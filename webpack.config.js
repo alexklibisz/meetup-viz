@@ -2,7 +2,6 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = {};
 
@@ -52,36 +51,11 @@ config.module = {
       test: /\.jsx?$/,
       loaders: ['react-hot', 'babel-loader'],
       include: path.join(__dirname, 'src')
-    }, {
-      test: /\.css$/,
-      include: [
-        path.join(__dirname, 'src'),
-        path.join(__dirname, 'node_modules/normalize.css'),
-        path.join(__dirname, 'node_modules/nvd3'),
-        path.join(__dirname, 'node_modules/leaflet')
-      ],
-      // loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-      loaders: ['style', 'css?sourceMap'],
     },
-    // Loader that handles .scss stylesheets with autoprefixing and creates a separate css bundle.
     {
       test: /\.scss$/,
       include: path.join(__dirname, 'src'),
       loaders: ['style', 'css?sourceMap!sass?sourceMap'],
-      // loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!sass-loader?sourceMap')
-    },
-    // Loader for pngs
-    {
-      test: /\.png/,
-      loader: 'url?limit=100000&minetype=image/png'
-    },
-    // Loader for other images, fonts
-    {
-      test: /\.(eot|woff|woff2|ttf|jpg|svg)$/,
-      include: [path.join(__dirname, 'src'),
-        path.join(__dirname, 'node_modules/goratchet/dist')
-      ],
-      loader: 'url-loader?limit=10000'
     }
   ]
 };

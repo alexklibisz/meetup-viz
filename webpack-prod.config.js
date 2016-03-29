@@ -9,16 +9,8 @@ delete config.devtool;
 
 // Files only, nothing extra
 config.entry = {
-  main: [
-    './src/main.js'
-  ]
+  main: ['./src/main.js']
 };
-
-// config.output = {
-//   path: __dirname + '/dist',
-//   filename: '[name].[chunkhash].js',
-//   chunkFilename: '[name].[chunkhash].js'
-// };
 
 config.plugins = [
   new HtmlWebpackPlugin({
