@@ -1,4 +1,3 @@
-/*eslint-disable */
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -32,13 +31,7 @@ config.plugins = [
 ];
 
 config.devServer = {
-  contentBase: './dist',
-  stats: {
-    colors: true
-  },
-  historyApiFallback: true,
-  hot: true,
-  headers: { 'Access-Control-Allow-Origin': '*' }
+  contentBase: './dist'
 };
 
 config.resolve = {
