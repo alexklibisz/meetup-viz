@@ -11,21 +11,11 @@ export const ChartViz = React.createClass({
       vizID: 'chart-viz-svg',
       chartName: 'Chart',
       dataValues: [
-        {
-          label: 'Stuff 1',
-          value: 30
-        },
-        {
-          label: 'Stuff 2',
-          value: 40
-        }
+        { label: 'Default 1', value: 30 },
+        { label: 'Default 2', value: 40 }
       ],
       columnCount: 10
     }
-  },
-
-  componentDidMount() {
-
   },
 
   componentDidUpdate() {
