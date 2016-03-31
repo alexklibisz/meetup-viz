@@ -48,10 +48,12 @@ export const SyncComponent = React.createClass({
   displayName: 'DashboardSyncComponent',
 
   componentWillMount() {
+    let count = 0;
+    const countKey = `MV: ${new Date().toLocaleString()}`;
     const socket = MeetupService.getRSVPSocket();
     socket.onmessage = (data) => {
-      ga('send', 'event', 'RSVPs', window.debugId, data);
       MeetupActions.addRSVP(data);
+      localStorage.setItem(countKey, count++);
     };
   },
 
