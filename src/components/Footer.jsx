@@ -1,9 +1,9 @@
 'use strict';
 import React from 'react';
 
-export const DataAggregate = React.createClass({
+export const Footer = React.createClass({
 
-  displayName: 'DataAggregate',
+  displayName: 'Footer',
 
   propTypes: {
     rsvpCount: React.PropTypes.number
@@ -16,7 +16,7 @@ export const DataAggregate = React.createClass({
       memoryUsed = (perf.memory !== undefined) ? perf.memory.usedJSHeapSize / 1000000 : -1;
 
     return (
-      <div className='data-aggregate'>
+      <div className='footer'>
         <span>RSVPs received: {this.props.rsvpCount}</span>,
         {
           (memoryUsed > 0) ? (
@@ -29,4 +29,4 @@ export const DataAggregate = React.createClass({
 
 });
 
-export default DataAggregate;
+export default Footer;

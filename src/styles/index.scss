@@ -42,11 +42,6 @@ a, a:visited, a:hover, a:active {
   flex: 2 1 auto;
 }
 
-.map-viz {
-  flex: 1 1 auto;
-  display: flex;
-}
-
 #map-viz {
   flex: 1 1 auto;
 }
@@ -62,7 +57,6 @@ a, a:visited, a:hover, a:active {
   > svg {
     flex: 1 1 auto;
   }
-
 }
 
 .chart-viz ._title {
@@ -72,7 +66,7 @@ a, a:visited, a:hover, a:active {
   font-weight: bold;
 }
 
-.data-aggregate {
+.footer {
   flex: 1 1 auto;
   background: #333;
   color: white;

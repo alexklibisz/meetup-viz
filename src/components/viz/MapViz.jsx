@@ -14,27 +14,26 @@ export const MapViz = React.createClass({
     }
   },
 
+  // Render the map when the component mounts.
+  // Assign it to the _map variable to be used in other functions.
   componentDidMount() {
     this._map = MapVizModel.render({ mapSelector: 'map-viz' });
   },
 
+  // Check if the nextProps.lastRSVP object has a venue property.
+  // If it does, grab the latitude and longitude and append a marker
+  // to the map. Remove the marker after 90 seconds.
   componentWillReceiveProps(nextProps) {
-    if(nextProps.lastRSVP.hasOwnProperty('venue')) {
-      const
-        {lat, lon} = nextProps.lastRSVP.venue,
-        marker = MapVizModel.addMarker({ map: this._map, lat, lon }),
-        removeAfter = 90 * 1000;
-      setTimeout(() => MapVizModel.removeMarker({map: this._map, marker}), removeAfter);
-    }
+    if(nextProps.lastRSVP.venue === undefined) return;
+    const
+      {lat, lon} = nextProps.lastRSVP.venue,
+      marker = MapVizModel.addMarker({ map: this._map, lat, lon }),
+      removeAfter = 90 * 1000;
+    setTimeout(() => MapVizModel.removeMarker({map: this._map, marker}), removeAfter);
   },
 
   render() {
-
-    return (
-      <div className='map-viz'>
-        <div id='map-viz'></div>
-      </div>
-    );
+    return (<div id='map-viz'></div>);
   }
 
 });
