@@ -9,8 +9,7 @@ export const MapViz = React.createClass({
 
   getDefaultProps() {
     return {
-      lastRSVP: {},
-      rsvpCount: 0
+      last: {}
     }
   },
 
@@ -20,13 +19,13 @@ export const MapViz = React.createClass({
     this._map = MapVizModel.render({ mapSelector: 'map-viz' });
   },
 
-  // Check if the nextProps.lastRSVP object has a venue property.
+  // Check if the nextProps.last object has a venue property.
   // If it does, grab the latitude and longitude and append a marker
   // to the map. Remove the marker after 90 seconds.
   componentWillReceiveProps(nextProps) {
-    if(nextProps.lastRSVP.venue === undefined) return;
+    if(nextProps.last.venue === undefined) return;
     const
-      {lat, lon} = nextProps.lastRSVP.venue,
+      {lat, lon} = nextProps.last.venue,
       marker = MapVizModel.addMarker({ map: this._map, lat, lon }),
       removeAfter = 90 * 1000;
     setTimeout(() => MapVizModel.removeMarker({map: this._map, marker}), removeAfter);

@@ -6,7 +6,7 @@ export const Footer = React.createClass({
   displayName: 'Footer',
 
   propTypes: {
-    rsvpCount: React.PropTypes.number
+    count: React.PropTypes.number
   },
 
   render() {
@@ -17,7 +17,7 @@ export const Footer = React.createClass({
 
     return (
       <div className='footer'>
-        <span>RSVPs received: {this.props.rsvpCount}</span>,
+        <span>RSVPs received: {this.props.count}</span>,
         {
           (memoryUsed > 0) ? (
             <span>&nbsp; memory used: {memoryUsed} mb</span>

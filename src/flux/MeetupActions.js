@@ -1,14 +1,11 @@
 'use strict';
-import alt from 'flux/Alt';
+import Alt from 'flux/Alt';
 
-// TODO: non-class implementation for actions.
-
-class MeetupActions {
-  constructor() {
-    this.generateActions(
-      'addRSVP'
-    );
+export default Alt.createActions({
+  addRSVP(item) {
+    return item;
   }
-}
+});
 
-export default alt.createActions(MeetupActions);
+// Simple actions can be written in shorthand as:
+// const MeetupActions = alt.generateActions('addRSVP');

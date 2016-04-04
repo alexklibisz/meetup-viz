@@ -1,38 +1,34 @@
 'use strict';
-import alt from 'flux/Alt';
+import Alt from 'flux/Alt';
 import MeetupActions from 'flux/MeetupActions';
 
-// TODO: do the non-class syntax for stores/actions to make it clear
-// how this is actually working.
+export default Alt.createStore({
+  displayName: 'MeetupStore',
 
-class MeetupStore {
-  constructor() {
-    this.state = {
-      rsvpCount: 0,
-      rsvpStates: {},
-      rsvpCountries: {},
-      rsvpNames: {},
-      lastRSVP: {}
-    };
-    this.bindActions(MeetupActions);
-  }
+  bindListeners: {
+    onAddRSVP: MeetupActions.addRSVP
+  },
+
+  state: {
+    count: 0,
+    states: {},
+    countries: {},
+    names: {},
+    last: {}
+  },
 
   onAddRSVP(rsvp) {
     const
-      {rsvpCount, rsvpStates, rsvpCountries, rsvpNames} = this.state,
+      {count, states, countries, names} = this.state,
       data = JSON.parse(rsvp.data),
       country = data.group.group_country,
       state = data.group.group_state,
       name = data.member.member_name.split(' ').shift();
 
-    if(state !== undefined) {
-      rsvpStates[state] = rsvpStates.hasOwnProperty(state) ? rsvpStates[state] + 1 : 1;
-    }
-    rsvpCountries[country] = rsvpCountries.hasOwnProperty(country) ? rsvpCountries[country] + 1 : 1;
-    rsvpNames[name] = rsvpNames.hasOwnProperty(name) ? rsvpNames[name] + 1 : 1;
-
-    this.setState({ rsvpCount: rsvpCount + 1, rsvpStates, rsvpCountries, rsvpNames, lastRSVP: data });
+    if(state !== undefined) states[state] = states.hasOwnProperty(state) ? states[state] + 1 : 1;
+    countries[country] = countries.hasOwnProperty(country) ? countries[country] + 1 : 1;
+    names[name] = names.hasOwnProperty(name) ? names[name] + 1 : 1;
+    this.setState({ count: count + 1, states, countries, names, last: data });
   }
-}
 
-export default alt.createStore(MeetupStore, 'MeetupStore');
+});
