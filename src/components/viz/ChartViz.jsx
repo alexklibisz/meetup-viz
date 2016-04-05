@@ -14,14 +14,14 @@ export const ChartViz = React.createClass({
         { label: 'Default 1', value: 30 },
         { label: 'Default 2', value: 40 }
       ],
-      columnCount: 10
+      barCount: 10
     }
   },
 
   componentDidUpdate() {
     const data = [{
       key: this.props.dataKey,
-      values: this._convertDataValues(this.props.dataValues, this.props.columnCount)
+      values: this._convertDataValues(this.props.dataValues, this.props.barCount)
     }];
 
     ChartVizModel.render({
@@ -34,9 +34,9 @@ export const ChartViz = React.createClass({
    * Convert the data passed in as a prop to the format
    * required by the NVD3 chart.
    * @param  {Object} dataValues Data passed in as a prop
-   * @return {Array}            Array of form {key: 'some name', value: integer value} for the top columnCount columns.
+   * @return {Array}            Array of form {key: 'some name', value: integer value} for the top barCount columns.
    */
-  _convertDataValues(dataValues, columnCount) {
+  _convertDataValues(dataValues, barCount) {
     const
       all = Object.keys(dataValues).map(key => {
         return {
@@ -45,7 +45,7 @@ export const ChartViz = React.createClass({
         };
       }),
       sortedByValue = all.sort((a, b) => b.value - a.value),
-      topColumns = sortedByValue.splice(0, columnCount);
+      topColumns = sortedByValue.splice(0, barCount);
 
     return topColumns;
   },
