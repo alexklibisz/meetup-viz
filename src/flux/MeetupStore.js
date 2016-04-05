@@ -5,30 +5,48 @@ import MeetupActions from 'flux/MeetupActions';
 export default Alt.createStore({
   displayName: 'MeetupStore',
 
-  bindListeners: {
-    onAddRSVP: MeetupActions.addRSVP
-  },
-
   state: {
-    count: 0,
-    states: {},
-    countries: {},
-    names: {},
-    last: {}
+    count: 0, // the number of RSVPs that we've gotten
+    states: {}, // key/value { state1: n1, state2: n2, ... }
+    countries: {}, // same as states
+    names: {}, // same as states
+    last: {} // the last RSVP object, only storing one at a time
   },
 
-  onAddRSVP(rsvp) {
-    const
-      {count, states, countries, names} = this.state,
-      data = JSON.parse(rsvp.data),
-      country = data.group.group_country,
-      state = data.group.group_state,
-      name = data.member.member_name.split(' ').shift();
+  bindListeners: {
+    handleAddRSVP: MeetupActions.addRSVP
+  },
 
-    if(state !== undefined) states[state] = states.hasOwnProperty(state) ? states[state] + 1 : 1;
-    countries[country] = countries.hasOwnProperty(country) ? countries[country] + 1 : 1;
-    names[name] = names.hasOwnProperty(name) ? names[name] + 1 : 1;
-    this.setState({ count: count + 1, states, countries, names, last: data });
+  handleAddRSVP(rsvp) {
+    // Get the current state properties.
+    let {count, states, countries, names, last} = this.state;
+
+    // Get the needed properties from the RSVP object.
+    let 
+      country = rsvp.group.group_country,
+      state = rsvp.group.group_state,
+      name = rsvp.member.member_name.split(' ').shift();
+
+    // Update the state values with the RSVP properties.
+    count += 1;
+    last = rsvp;
+
+    if(countries.hasOwnProperty(country))
+      countries[country] += 1;
+    else
+      countries[country] = 1;
+
+    if(state !== undefined && states.hasOwnProperty(state))
+      states[state] += 1;
+    else if(state !== undefined)
+      states[state] = 1;
+
+    if(names.hasOwnProperty(name))
+      names[name] += 1;
+    else
+      names[name] = 1;
+
+    this.setState({ count, states, countries, names, last });
   }
 
 });

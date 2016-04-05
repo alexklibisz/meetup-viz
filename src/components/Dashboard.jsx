@@ -4,14 +4,11 @@ import Header from 'components/Header';
 import ChartViz from 'components/viz/ChartViz';
 import MapViz from 'components/viz/MapViz';
 import Footer from 'components/Footer';
-import MeetupService from 'services/MeetupService';
 import MeetupActions from 'flux/MeetupActions';
 import MeetupStore from 'flux/MeetupStore';
 import AltContainer from 'alt-container';
-// import Perf from 'react-addons-perf';
-// import Ax from 'axios';
 
-export const Dashboard = React.createClass({
+const Dashboard = React.createClass({
 
   displayName: 'Dashboard',
 
@@ -44,36 +41,17 @@ export const Dashboard = React.createClass({
 
 });
 
-// Perf.start();
+const SmartComponent = React.createClass({
 
-export const SyncComponent = React.createClass({
-
-  displayName: 'DashboardSyncComponent',
+  displayName: 'DashboardSmartComponent',
 
   componentWillMount() {
-    const socket = MeetupService.getRSVPSocket();
-    socket.onmessage = MeetupActions.addRSVP
+    const socket = new WebSocket('ws://stream.meetup.com/2/rsvps');
+    socket.onmessage = function(message) {
+      const rsvp = JSON.parse(message.data);
+      MeetupActions.addRSVP(rsvp);
+    };
   },
-
-  // componentWillMount() {
-  //   let count = 0, sessionId = new Date().getTime();
-  //   const socket = MeetupService.getRSVPSocket();
-  //   socket.onmessage = (data) => {
-  //     if(count % 10 === 0) {
-  //       Ax.post('http://localhost:5000/perf', {
-  //         sessionId,
-  //         storeState: MeetupStore.getState(),
-  //         perf: Perf.getLastMeasurements()
-  //       }).then((res) => console.log(res.data));
-  //     }
-  //     count += 1;
-  //     MeetupActions.addRSVP(data);
-  //   };
-  // },
-
-  // componentWillUnmount() {
-  //   Perf.stop();
-  // },
 
   render() {
     return (
@@ -85,4 +63,4 @@ export const SyncComponent = React.createClass({
 
 });
 
-export default SyncComponent;
+export default SmartComponent;

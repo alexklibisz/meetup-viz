@@ -1,14 +1,7 @@
 'use strict';
-// Setup fixes/polyfills for ES6/ES7
-require('babel-polyfill');
-Promise = require('bluebird');
-Promise.onPossiblyUnhandledRejection(function(error) { throw error; });
-Promise.config({ warnings: false });
-
-window.debugId = new Date().getTime();
-window.onerror = function(message, source, lineno, colno, error) {
-  ga('send', 'event', 'RSVPs', window.debugId, { message, source, error });
-};
-
+// Pulling in Google Analytics for all the page views.
+require('./ga.js');
+// Pulling the scss stylesheet, applied at runtime to the page.
 require('./styles/index.scss');
+// Pulling in the root component.
 require('./components/Root.jsx');
