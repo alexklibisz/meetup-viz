@@ -22,7 +22,7 @@ export default Alt.createStore({
     let {count, states, countries, names, last} = this.state;
 
     // Get the needed properties from the RSVP object.
-    let 
+    let
       country = rsvp.group.group_country,
       state = rsvp.group.group_state,
       name = rsvp.member.member_name.split(' ').shift();
@@ -46,6 +46,7 @@ export default Alt.createStore({
     else
       names[name] = 1;
 
+    // Update the store state.
     this.setState({ count, states, countries, names, last });
   }
 

@@ -1,9 +1,12 @@
 'use strict';
 import React from 'react';
 
-export const Header = React.createClass({
+const Header = React.createClass({
+
+  displayName: 'Header',
 
   render() {
+
     return (
       <div className='header'>
         <h3>Meetup.com RSVP Visualization</h3>
@@ -12,8 +15,8 @@ export const Header = React.createClass({
           Meetup.com open events RSVP API.</a></span>
       </div>
     );
-  }
 
+  }
 });
 
 export default Header;

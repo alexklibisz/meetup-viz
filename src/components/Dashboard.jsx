@@ -13,9 +13,12 @@ const Dashboard = React.createClass({
   displayName: 'Dashboard',
 
   render() {
+
     return (
       <main>
-        <Header/>
+        <div>
+          <Header />
+        </div>
         <div className='viz-container'>
           <div className='_map'>
             <MapViz last={this.props.MeetupStore.last} />
