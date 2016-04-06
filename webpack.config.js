@@ -24,7 +24,7 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index.html'),
-      inject: 'body'
+      inject: false
     })
   ],
   // Dev server set up. Serve from dist directory.
