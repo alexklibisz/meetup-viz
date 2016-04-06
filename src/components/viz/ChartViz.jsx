@@ -20,7 +20,6 @@ export const ChartViz = React.createClass({
 
   componentDidUpdate() {
     const data = [{
-      key: this.props.dataKey,
       values: this._convertDataValues(this.props.dataValues, this.props.barCount)
     }];
 
