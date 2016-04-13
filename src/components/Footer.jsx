@@ -5,14 +5,14 @@ const Footer = React.createClass({
 
   displayName: 'Footer',
 
+  propTypes: {
+    count: React.PropTypes.number
+  },
+
   getDefaultProps() {
     return {
       count: 0
     };
-  },
-
-  propTypes: {
-    count: React.PropTypes.number
   },
 
   render() {
@@ -22,6 +22,7 @@ const Footer = React.createClass({
       </div>
     );
   }
+
 });
 
 export default Footer;
