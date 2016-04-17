@@ -2,7 +2,7 @@
 
 const model = {};
 
-model.render = function init({ svgSelector, data }) {
+model.render = function render({ svgSelector, data }) {
 
   svgSelector = svgSelector.charAt(0) === '#' ? svgSelector : `#${svgSelector}`;
 
