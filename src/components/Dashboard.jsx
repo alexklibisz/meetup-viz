@@ -8,9 +8,9 @@ import MeetupActions from 'flux/MeetupActions';
 import MeetupStore from 'flux/MeetupStore';
 import AltContainer from 'alt-container';
 
-const Dashboard = React.createClass({
+const DashboardDumb = React.createClass({
 
-  displayName: 'Dashboard',
+  displayName: 'DashboardDumb',
 
   render() {
 
@@ -44,9 +44,9 @@ const Dashboard = React.createClass({
 
 });
 
-const SmartComponent = React.createClass({
+const DashboardSmart = React.createClass({
 
-  displayName: 'DashboardSmartComponent',
+  displayName: 'DashboardSmart',
 
   componentWillMount() {
     const socket = new WebSocket('ws://stream.meetup.com/2/rsvps');
@@ -59,11 +59,11 @@ const SmartComponent = React.createClass({
   render() {
     return (
       <AltContainer stores={{MeetupStore}}>
-        <Dashboard />
+        <DashboardDumb />
       </AltContainer>
     );
   }
 
 });
 
-export default SmartComponent;
+export default DashboardSmart;
